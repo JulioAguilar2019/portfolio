@@ -1,4 +1,4 @@
-import { LayoutComponent, Navbar } from "./components"
+import { LayoutComponent } from "./components"
 import { Home } from "./pages"
 
 
@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <LayoutComponent >
-        <Navbar />
         <Home />
       </LayoutComponent>
     </>
