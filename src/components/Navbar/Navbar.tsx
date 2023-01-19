@@ -1,11 +1,11 @@
-
+import Logo from '@/assets/home/logoFinal.svg'
 
 export const Navbar = () => {
     return (
         <nav className="bg-background border-gray-200 px-2 sm:px-4 py-2.5">
             <div className="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="#" className="flex items-center">
-                    <img src="src\utilities\logoFinal.svg" className="h-6 mr-3 sm:h-8" alt="Julio Logo" />
+                    <img src={Logo} className="h-6 mr-3 sm:h-8" alt="Julio Logo" />
                     <span className="font-bold text-white text-lg whitespace-nowrap ">Julio Aguilar</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
