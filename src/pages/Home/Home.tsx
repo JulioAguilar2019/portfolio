@@ -1,5 +1,13 @@
+import { Divider } from "@/components"
+import { Frontpage } from "./components"
+
 export const Home = () => {
     return (
-        <div>Home</div>
+        <>
+            <Frontpage />
+            <Divider title="Projects" />
+
+
+        </>
     )
 }
