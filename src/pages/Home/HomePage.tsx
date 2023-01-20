@@ -2,7 +2,7 @@ import { Divider } from "@/components"
 import { ProjectCard } from "../Projects"
 import { Frontpage } from "./components"
 
-export const Home = () => {
+export const HomePage = () => {
     return (
         <div className="container px-6 py-10 mx-auto">
             <Frontpage />

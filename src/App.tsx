@@ -1,5 +1,6 @@
 import { LayoutComponent } from "./components"
-import { Home } from "./pages"
+import { HomePage } from "./pages"
+import { AppRouter } from "./routes"
 
 
 function App() {
@@ -8,8 +9,7 @@ function App() {
   return (
     <>
       <LayoutComponent >
-        <Home />
-
+        <AppRouter />
       </LayoutComponent>
     </>
 

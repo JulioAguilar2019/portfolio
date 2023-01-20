@@ -1,8 +1,7 @@
-import picture from '@/assets/home/firstImage.png'
 
-export const Frontpage = () => {
+
+export const About = () => {
     return (
-
         <>
             <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
 
@@ -16,7 +15,7 @@ export const Frontpage = () => {
                     <button type="button" className="py-2.5 px-5 my-4 text-sm font-medium text-white focus:outline-none border border-primary hover:bg-primary hover:opacity-75">Download resume</button>
 
                 </div>
-                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={picture} alt="" />
+                {/* <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={picture} alt="" /> */}
 
             </div>
 
