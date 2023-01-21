@@ -2,12 +2,14 @@ import Logo from '@/assets/home/logoFinal.svg';
 import { PublicRoutes } from '@/models';
 import { NavLink } from 'react-router-dom';
 
-const active: string = 'block py-2 pl-3 pr-4 text-white  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0'
+const active: string = 'block py-2 pl-3 pr-4 text-white md:border-0  md:p-0'
 const isNotActive: string = 'block py-2 pl-3 pr-4 text-secondary hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0'
 
 const classNavBar = (state: boolean): string => {
     return state ? active : isNotActive
 }
+
+const test: boolean = true;
 
 export const Navbar = () => {
     return (
@@ -24,16 +26,17 @@ export const Navbar = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="flex flex-col p-4 mt-4 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
                         <li>
-                            <NavLink to={PublicRoutes.HOME} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary">#</strong>Home</NavLink>
+                            <NavLink to={PublicRoutes.HOME} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary p-0.5">#</strong>Home</NavLink>
+
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.PROJECTS} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary">#</strong>Projects</NavLink>
+                            <NavLink to={PublicRoutes.PROJECTS} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary p-0.5">#</strong>Projects</NavLink>
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.ABOUT} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary">#</strong>About-me</NavLink>
+                            <NavLink to={PublicRoutes.ABOUT} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary p-0.5">#</strong>About-me</NavLink>
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.CONTACT} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary">#</strong>Contact</NavLink>
+                            <NavLink to={PublicRoutes.CONTACT} className={({ isActive }) => classNavBar(isActive)}><strong className="text-primary ">#</strong>Contact</NavLink>
                         </li>
 
                     </ul>

@@ -9,7 +9,7 @@ export const ProjectCard = () => {
             <img className="object-cover object-center w-full h-56" src={reactImage} alt="avatar" />
 
             <div className="flex items-center px-6 py-3 border border-secondary bg-primary">
-                <h1 className="mx-3 text-lg font-semibold text-white">View live</h1>
+                <h1 className="mx-3 text-lg font-semibold text-background">View live</h1>
             </div>
 
             <div className="px-6 py-4">

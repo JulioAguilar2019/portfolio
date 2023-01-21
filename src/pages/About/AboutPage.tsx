@@ -1,5 +1,9 @@
+import { About } from "./components"
+
 export const AboutPage = () => {
     return (
-        <div>AboutPage</div>
+        <>
+            <About />
+        </>
     )
 }

@@ -7,6 +7,7 @@ module.exports = {
         primary: '#DBAAE9',
         secondary: '#B3BAC6',
         background: '#282C33',
+        primary100: '#dbaae933',
       },
     },
   },
