@@ -1,10 +1,10 @@
 import image from '@/assets/about/image.png';
-import image2 from '@/assets/about/image.png';
+
 
 export const About = () => {
     return (
         <>
-            <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:-mx-6 lg:flex lg:items-center">
 
                 <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"> <span className="text-primary">/</span>about-me</h1>
@@ -19,7 +19,7 @@ export const About = () => {
                     <button type="button" className="py-2.5 px-5 my-4 text-sm font-medium text-white border border-primary transition duration-0 hover:duration-150  hover:bg-primary100">Download resume</button>
 
                 </div>
-                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-2/4" src={image} alt="" />
+                <img className="object-scale-down lg:w-1/2 lg:mx-6 w-full h-96 rounded-lg lg:h-[45rem]" src={image} alt="" />
 
             </div>
 
