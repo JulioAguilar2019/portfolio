@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "about": "Acerca-de-mi",
+        "contact": "Contacto"
+    },    
+    "home": {
+        "greeting": "Soy un",
+        "tech": "desarrollador full-stack ",
+        "country": "de El Salvador",
+        "button": "Descargar CV",
+        "quote": "No soy un gran programador; Solo soy un buen programador con buenos hábitos."
+    }
+}

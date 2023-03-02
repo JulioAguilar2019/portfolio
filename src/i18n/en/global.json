@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About-me",
+        "contact": "Contact"
+    },    
+    "home": {
+        "greeting": "I’m a",
+        "tech": "full-stack developer",
+        "country": "from El Salvador",
+        "button": "Download resume",
+        "quote": "I’m not a great programmer; I’m just a good programmer with great habits."
+    }
+}
