@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { useTranslation } from "react-i18next";
 
 export const Dropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [t, i18n] = useTranslation('global')
-
-
     return (
         <div className="relative inline-block">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="block w-full px-4 py-2 text-secondary bg-transparent border border-gray-400 rounded-md focus:border-primary focus:ring-opacity-40 focus:ring-primary focus:outline-none"
+                className="block w-full px-4 py-2 uppercase text-secondary bg-transparent border border-gray-400 rounded-md focus:border-primary focus:ring-opacity-40 focus:ring-primary focus:outline-none"
             >
-                EN
+                {i18n.language}
                 <svg
                     className="w-5 h-5 text-secondary inline-block align-middle ml-1"
                     xmlns="http://www.w3.org/2000/svg"
