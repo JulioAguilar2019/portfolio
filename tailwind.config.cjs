@@ -8,6 +8,7 @@ module.exports = {
         secondary: '#B3BAC6',
         background: '#282C33',
         primary100: '#dbaae933',
+        background100: '#1b1e22',
       },
     },
   },
