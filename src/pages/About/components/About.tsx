@@ -4,10 +4,9 @@ import image from '@/assets/about/image.png';
 export const About = () => {
     return (
         <>
-            <div className="lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:-mx-6 lg:flex lg:items-start">
 
                 <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"> <span className="text-primary">/</span>about-me</h1>
                     <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-white md:text-3xl lg:text-4xl">Who am I?</h1>
 
                     <p className="mb-3 font-light text-justify leading-8 text-secondary">

@@ -1,5 +1,6 @@
 import picture from '@/assets/home/firstImage.png'
 import { useTranslation } from 'react-i18next'
+import downloadIcon from '@/assets/home/download.svg'
 
 export const Frontpage = () => {
 
@@ -7,17 +8,21 @@ export const Frontpage = () => {
     return (
 
         <>
-            <div className="mt-8 lg:-mx-6 lg:flex lg:items-center">
+            <div className="lg:-mx-6 lg:flex lg:items-center">
 
-                <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                <div className="lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">{t("home.greeting")}<span className='text-primary'> {t("home.tech")}</span> {t("home.country")}</h1>
 
                     <p className="mt-3 text-sm text-secondary">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
                         laudantium quia tempore delect
                     </p>
-                    <button type="button" className="py-2.5 px-5 my-4 text-sm font-medium text-white focus:outline-none border border-primary hover:bg-primary100">{t("home.button")}</button>
-
+                    <button type="button" className="py-2.5 px-5 my-4 text-sm font-bold text-white 
+                     focus:outline-none border border-primary transition 
+                     duration-500 ease-in-out transform 
+                     hover:bg-primary100 hover:text-darkText 
+                     hover:shadow-none hover:-translate-y-1 
+                     hover:scale-110">{t("home.button")} </button>
                 </div>
                 <img className="object-scale-down w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={picture} alt="" />
 
