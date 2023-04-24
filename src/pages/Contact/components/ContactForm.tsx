@@ -48,7 +48,7 @@ export const ContactForm = () => {
                 )
                 .then(
                     function (response) {
-                        showToast("Correo enviado correctamente", "success");
+                        showToast("Correo enviado correctamente.", "success");
                         reset();
                     },
                     function (error) {
@@ -74,9 +74,9 @@ export const ContactForm = () => {
 
                         <div className="mt-6 space-y-8 md:mt-8">
                             <p className="flex items-start -mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-2 text-primary " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-2 text-primary " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
 
                                 <span className="mx-2 text-white truncate w-72">
@@ -95,8 +95,8 @@ export const ContactForm = () => {
                             </p>
 
                             <p className="flex items-start -mx-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-2 text-primary " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-2 text-primary " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
 
                                 <span className="mx-2 text-white truncate w-72">dev.julioaguilar@gmail.com</span>
@@ -146,15 +146,15 @@ export const ContactForm = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -100 }}
                                     transition={{ duration: 0.4 }}
-                                    className={`fixed top-0 left-1/2 mt-4 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-md ${toastType === 'success' ? 'bg-green-500' : 'bg-red-500'
+                                    className={`fixed top-0 right-10 mt-4 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-md ${toastType === 'success' ? 'bg-green-500' : 'bg-red-500'
                                         } text-white z-50`}
                                 >
                                     {toastMessage}
                                     <button
-                                        className="absolute top-0 right-0 mt-2 mr-2 text-white focus:outline-none"
+                                        className="absolute top-0 right-0 mt-2 mr-1 text-white focus:outline-none"
                                         onClick={closeToast}
                                     >
-                                        ×
+                                        x
                                     </button>
                                 </motion.div>
                             )}
