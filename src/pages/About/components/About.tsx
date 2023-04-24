@@ -1,7 +1,20 @@
 import image from '@/assets/about/image.png';
+import resume from '@/assets/home/CV - 2023.pdf'
+import { PublicRoutes } from '@/models';
+import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+interface Props {
+    homePage?: boolean;
+}
+
+const buttonClass = "py-2.5 px-5 my-4 text-sm font-bold text-white focus:outline-none border border-primary transition duration-500 ease-in-out transform hover:bg-primary100 hover:text-darkText hover:shadow-none hover:-translate-y-1 hover:scale-110"
 
 
-export const About = () => {
+export const About = ({ homePage = true }: Props) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <>
             <div className="lg:-mx-6 lg:flex lg:items-start">
@@ -15,20 +28,18 @@ export const About = () => {
                     <p className="mb-3 font-light text-justify leading-8 text-secondary">
                         Además de mi experiencia técnica, también tengo habilidades en <span className="text-primary">resolución de problemas y pensamiento lógico</span> que me permiten encontrar soluciones eficaces a los desafíos que se presentan en el desarrollo de software. Me gusta trabajar en equipo y colaborar con otros desarrolladores para lograr resultados impresionantes. Estoy constantemente buscando aprender nuevas habilidades y tecnologías para mejorar mis habilidades y ofrecer un mejor servicio a mis clientes. Estoy ansioso de poner mis habilidades a prueba en un entorno de trabajo desafiante y enriquecedor.
                     </p>
-                    <button type="button" className="py-2.5 px-5 my-4 text-sm font-medium text-white border border-primary transition duration-0 hover:duration-150  hover:bg-primary100">Download resume</button>
-
+                    {
+                        homePage
+                            ?
+                            <NavLink to={PublicRoutes.ABOUT} type='button' className={buttonClass}>Read more</NavLink>
+                            :
+                            <a href={resume} type='button' download='resume.pdf' className={buttonClass}>Download resume</a>
+                    }
                 </div>
-                <img className="object-scale-down lg:w-1/2 lg:mx-6 w-full h-96 rounded-lg lg:h-[45rem]" src={image} alt="" />
+                <img className="object-scale-down lg:w-1/2 lg:mx-6 w-full h-96 rounded-lg lg:h-[45rem]" src={image} alt="julio-aguilar" />
 
             </div>
 
-
-            <div className="py-10 w-3/4 mt-10 mx-auto border border-secondary">
-                <blockquote>
-                    <p className="text-2xl italic font-medium text-secondary text-center overflow-auto">"I’m not a great programmer; I’m just a good programmer with great habits."</p>
-                </blockquote>
-                <p className="pr-3 font-light text-center text-secondary">- Kent Beck</p>
-            </div>
         </>
 
 

@@ -1,5 +1,5 @@
 import { Divider } from "@/components"
-import { ProjectCard } from "@/pages"
+import { About, ProjectCard } from "@/pages"
 import { Frontpage } from "@/pages"
 import { TechStack } from '../About/components/TechStack';
 import reactIcon from '@/assets/projects/reactIcon.svg'
@@ -20,6 +20,8 @@ export const HomePage = () => {
             <Divider title="Tech-Stack" line={true} />
             <TechStack />
             <Divider title="About" line={true} />
+            <About />
+            <Divider title="Contact" line={true} />
         </>
     )
 }
