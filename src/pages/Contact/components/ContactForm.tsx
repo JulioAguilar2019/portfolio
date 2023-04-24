@@ -1,6 +1,68 @@
-import React from 'react'
+import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+};
 
 export const ContactForm = () => {
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+    const [toastMessage, setToastMessage] = useState<String>('');
+    const [toastType, setToastType] = useState<String>('');
+    const [toastVisible, setToastVisible] = useState<Boolean>(false);
+
+
+    const showToast = (message: string, type: string) => {
+        setToastMessage(message);
+        setToastType(type);
+        setToastVisible(true);
+        setTimeout(() => {
+            setToastVisible(false);
+        }, 3000);
+    };
+
+    const closeToast = () => {
+        setToastVisible(false);
+    };
+
+    const onSubmit = handleSubmit(
+        ({ name, email, message }) => {
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                to_name: "Julio Aguilar",
+                message: message,
+            };
+
+            emailjs
+                .send(
+                    import.meta.env.VITE_SERVICE_ID,
+                    import.meta.env.VITE_TEMPLATE_ID,
+                    templateParams,
+                    import.meta.env.VITE_PUBLIC_KEY
+                )
+                .then(
+                    function (response) {
+                        showToast("Correo enviado correctamente", "success");
+                        reset();
+                    },
+                    function (error) {
+                        showToast("Error al enviar el correo", "error");
+                    }
+                );
+        },
+        () => {
+            if (errors.name || errors.email || errors.message) {
+                showToast("Por favor, completa todos los campos.", "error");
+            }
+        }
+    );
+
     return (
         <>
             <div className="container px-6 py-12 mx-auto">
@@ -77,27 +139,57 @@ export const ContactForm = () => {
                     </div>
 
                     <div className="mt-8 lg:w-1/2 lg:mx-6">
+                        <AnimatePresence>
+                            {toastVisible && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -100 }}
+                                    transition={{ duration: 0.4 }}
+                                    className={`fixed top-0 left-1/2 mt-4 transform -translate-x-1/2 px-4 py-2 rounded-md shadow-md ${toastType === 'success' ? 'bg-green-500' : 'bg-red-500'
+                                        } text-white z-50`}
+                                >
+                                    {toastMessage}
+                                    <button
+                                        className="absolute top-0 right-0 mt-2 mr-2 text-white focus:outline-none"
+                                        onClick={closeToast}
+                                    >
+                                        ×
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                         <div
                             className="w-full px-8 py-10 mx-auto overflow-hidden bg-transparent border-secondary border-solid  lg:max-w-xl  ">
                             <h1 className="text-lg font-medium text-white">Send me a message</h1>
 
-                            <form className="mt-6">
+                            <form onSubmit={onSubmit} className="mt-6">
                                 <div className="flex-1">
-                                    <label className="block mb-2 text-sm text-white ">Full Name</label>
-                                    <input type="text" placeholder="Owen Johnson" className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md" />
+                                    <label className="block mb-2 text-sm text-white" htmlFor='name'>Full Name</label>
+                                    <input
+                                        {...register("name", { required: "Name is required" })}
+                                        type="text" name='name' placeholder="Owen Johnson"
+                                        className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md" />
                                 </div>
 
                                 <div className="flex-1 mt-6">
-                                    <label className="block mb-2 text-sm text-white ">Email address</label>
-                                    <input type="email" placeholder="owenjohnson@example.com" className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md " />
+                                    <label className="block mb-2 text-sm text-white" htmlFor='email'>Email address</label>
+                                    <input
+                                        {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })}
+                                        type="email" name='email' placeholder="owenjohnson@example.com"
+                                        className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md " />
                                 </div>
 
                                 <div className="w-full mt-6">
                                     <label className="block mb-2 text-sm text-white dark:text-gray-200">Message</label>
-                                    <textarea className="block w-full h-32 px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md md:h-48 " placeholder="Message"></textarea>
+                                    <textarea
+                                        {...register("message", { required: "Message is required" })}
+                                        className="block w-full h-32 px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md md:h-48 "
+                                        placeholder="Message"
+                                    />
                                 </div>
 
-                                <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-primary100 hover:text-darkText">
+                                <button type='submit' className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-primary100 hover:text-darkText">
                                     Send Message
                                 </button>
                             </form>
