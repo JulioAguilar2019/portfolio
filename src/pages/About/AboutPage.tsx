@@ -1,6 +1,5 @@
 import { Divider } from "@/components"
 import { About } from "./components"
-import { AspectRatio } from "@/components/aspectRatio/AspectRatio"
 
 export const AboutPage = () => {
     return (

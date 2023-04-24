@@ -1,46 +1,33 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-interface Props {
-    img: string;
-    altText: string;
-    techName: string;
-    left?: number;
-    top?: number;
-    right?: number;
-    bottom?: number;
+interface ImageWithHoverProps {
+    src: string;
+    hoverSrc: string;
+    alt: string;
+    title: string;
 }
 
-export const TechIcon = ({ img, altText, techName, left, right, top, bottom }: Props) => {
-
-    const [hover, setHover] = useState(false);
-
-    const handleMouseEnter = () => {
-        setHover(true);
-    };
-
-    const handleMouseLeave = () => {
-        setHover(false);
-    };
+export const ImageWithHover: React.FC<ImageWithHoverProps> = ({ src, hoverSrc, alt, title }) => {
     return (
-        <div
-            className={`flex flex-col w-[4rem] h-[4rem] items-center p-3 border border-secondary rounded-lg transition-all duration-300 ease-in-out hover:h-[6rem] hover:w-[7rem]`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                position: 'absolute',
-                left: left ? `${left}%` : undefined,
-                top: top ? `${top}%` : undefined,
-                right: right ? `${right}%` : undefined,
-                bottom: bottom ? `${bottom}%` : undefined,
-            }}
-        >
-            <img className="w-10 h-10" src={img} alt={altText} />
-            <span
-                className={`text-center text-secondary mt-1 transition-opacity duration-300 ease-in-out ${hover ? 'opacity-100' : 'opacity-0'
-                    }`}
-            >
-                {techName}
-            </span>
+        <div className='flex flex-col text-center'>
+            <motion.img
+                src={src}
+                alt={alt}
+                className='mx-auto object-cover h-40 w-40'
+                whileHover={{ scale: 1.1, y: -10 }}
+                animate={{ scale: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => {
+                    e.currentTarget.src = hoverSrc;
+                }}
+                onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => {
+                    e.currentTarget.src = src;
+                }}
+            />
+            <p className="text-xl font-light text-secondary">
+                {title}
+            </p>
         </div>
-    )
-}
+    );
+};
