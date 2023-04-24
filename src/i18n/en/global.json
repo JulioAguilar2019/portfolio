@@ -11,5 +11,18 @@
         "country": "from El Salvador",
         "button": "Download resume",
         "quote": "I’m not a great programmer; I’m just a good programmer with great habits."
+    },
+    "about": {
+        "title": "Who am I?",
+        "about-me": "I am a frontend web developer in my final year of software development engineering. I use technologies such as ",
+        "techs": "TypeScript, React JS, Redux, Tailwind, and NodeJS ",
+        "paragraph1":"to create intuitive and attractive web applications. Additionally, I have a ",
+        "english": "B2 level of English, ",
+        "paragraph2": "which allows me to communicate effectively with colleagues and clients in an international environment.",
+        "experience": "In addition to my technical experience, I also have ",
+        "abilities": "problem-solving and logical thinking skills ",
+        "paragraph3": "that allow me to find effective solutions to challenges that arise in software development. I enjoy working in a team and collaborating with other developers to achieve impressive results. I am constantly looking to learn new skills and technologies to improve my abilities and provide better service to my clients. I am eager to put my skills to the test in a challenging and rewarding work environment.",
+        "buttonCV": "Download resume",
+        "buttonMore": "More about me"
     }
 }

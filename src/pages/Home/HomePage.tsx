@@ -21,7 +21,6 @@ export const HomePage = () => {
             <TechStack />
             <Divider title="About" line={true} />
             <About />
-            <Divider title="Contact" line={true} />
         </>
     )
 }

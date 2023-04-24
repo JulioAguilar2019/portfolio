@@ -1,8 +1,10 @@
 import image from '@/assets/about/image.png';
-import resume from '@/assets/home/CV - 2023.pdf'
+import resume from '@/assets/home/CV - 2023.pdf';
 import { PublicRoutes } from '@/models';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+
 interface Props {
     homePage?: boolean;
 }
@@ -11,6 +13,7 @@ const buttonClass = "py-2.5 px-5 my-4 text-sm font-bold text-white focus:outline
 
 
 export const About = ({ homePage = true }: Props) => {
+    const [t] = useTranslation('global')
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,7 +23,7 @@ export const About = ({ homePage = true }: Props) => {
             <div className="lg:-mx-6 lg:flex lg:items-start">
 
                 <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                    <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-white md:text-3xl lg:text-4xl">Who am I?</h1>
+                    <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-white md:text-3xl lg:text-4xl">{t("about.title")}</h1>
 
                     <p className="mb-3 font-light text-justify leading-8 text-secondary">
                         Soy un desarrollador web frontend en mi último año de ingeniería en desarrollo de software. Utilizo tecnologías como <span className="text-primary">TypeScript, React JS, Redux, Tailwind y NodeJS</span> para crear aplicaciones web intuitivas y atractivas. También tengo un <span className="text-primary">nivel B2 en inglés</span>, lo que me permite comunicarme eficazmente con colegas y clientes en un ambiente internacional.

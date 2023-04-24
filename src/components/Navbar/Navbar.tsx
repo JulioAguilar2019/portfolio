@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Dropdown } from '../dropdown/dropdown';
+import { useTranslation } from 'react-i18next'
 
 
 const active: string = 'block py-2 pl-3 pr-4 text-white md:border-0 md:p-0 text-primary first-letter:p-0.5 first-letter:font-bold '
@@ -15,6 +16,8 @@ const classNavBar = (state: boolean): string => {
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [t] = useTranslation('global')
+
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -56,16 +59,16 @@ export const Navbar = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="flex flex-col items-center p-4 mt-4 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
                         <li>
-                            <NavLink to={PublicRoutes.HOME} className={({ isActive }) => classNavBar(isActive)}>&gt;Home</NavLink>
+                            <NavLink to={PublicRoutes.HOME} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.home")}</NavLink>
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.PROJECTS} className={({ isActive }) => classNavBar(isActive)}>&gt;Projects</NavLink>
+                            <NavLink to={PublicRoutes.PROJECTS} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.projects")}</NavLink>
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.ABOUT} className={({ isActive }) => classNavBar(isActive)}>&gt;About-me</NavLink>
+                            <NavLink to={PublicRoutes.ABOUT} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.about")}</NavLink>
                         </li>
                         <li>
-                            <NavLink to={PublicRoutes.CONTACT} className={({ isActive }) => classNavBar(isActive)}>&gt;Contact</NavLink>
+                            <NavLink to={PublicRoutes.CONTACT} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.contact")}</NavLink>
                         </li>
                         <li>
                             <Dropdown />
@@ -98,36 +101,16 @@ export const Navbar = () => {
                             <div className="flex flex-col h-full">
                                 <ul className="flex flex-col">
                                     <li className="flex-1">
-                                        <NavLink
-                                            to={PublicRoutes.HOME}
-                                            className={({ isActive }) => classNavBar(isActive)}
-                                        >
-                                            <strong className="text-primary p-0.5">#</strong>Home
-                                        </NavLink>
+                                        <NavLink to={PublicRoutes.HOME} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.home")}</NavLink>
                                     </li>
                                     <li className="flex-1">
-                                        <NavLink
-                                            to={PublicRoutes.PROJECTS}
-                                            className={({ isActive }) => classNavBar(isActive)}
-                                        >
-                                            <strong className="text-primary p-0.5">#</strong>Projects
-                                        </NavLink>
+                                        <NavLink to={PublicRoutes.PROJECTS} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.projects")}</NavLink>
                                     </li>
                                     <li className="flex-1">
-                                        <NavLink
-                                            to={PublicRoutes.ABOUT}
-                                            className={({ isActive }) => classNavBar(isActive)}
-                                        >
-                                            <strong className="text-primary p-0.5">#</strong>About-me
-                                        </NavLink>
+                                        <NavLink to={PublicRoutes.ABOUT} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.about")}</NavLink>
                                     </li>
                                     <li className="flex-1">
-                                        <NavLink
-                                            to={PublicRoutes.CONTACT}
-                                            className={({ isActive }) => classNavBar(isActive)}
-                                        >
-                                            <strong className="text-primary ">#</strong>Contact
-                                        </NavLink>
+                                        <NavLink to={PublicRoutes.CONTACT} className={({ isActive }) => classNavBar(isActive)}>&gt;{t("nav.contact")}</NavLink>
                                     </li>
                                     <li className="flex-1 ml-3">
                                         <Dropdown />

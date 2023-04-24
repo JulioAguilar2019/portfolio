@@ -11,5 +11,17 @@
         "country": "de El Salvador",
         "button": "Descargar CV",
         "quote": "No soy un gran programador; Solo soy un buen programador con buenos hábitos."
-    }
+    },
+    "about": {
+    "title": "¿Quién soy?",
+    "about-me": "Soy un desarrollador web frontend en mi último año de ingeniería en desarrollo de software. Utilizo tecnologías como ",
+    "techs": "TypeScript, React JS, Redux, Tailwind, and NodeJS ",
+    "paragraph1":"para crear aplicaciones web intuitivas y atractivas. También tengo un ",
+    "english": "nivel B2 en inglés, ",
+    "paragraph2": "lo que me permite comunicarme eficazmente con colegas y clientes en un ambiente internacional.",
+    "experience": "Además de mi experiencia técnica, también tengo habilidades en ",
+    "abilities": "resolución de problemas y pensamiento lógico ",
+    "paragraph3": "que me permiten encontrar soluciones eficaces a los desafíos que se presentan en el desarrollo de software. Me gusta trabajar en equipo y colaborar con otros desarrolladores para lograr resultados impresionantes. Estoy constantemente buscando aprender nuevas habilidades y tecnologías para mejorar mis habilidades y ofrecer un mejor servicio a mis clientes. Estoy ansioso de poner mis habilidades a prueba en un entorno de trabajo desafiante y enriquecedor."    },
+    "buttonCV": "Descargar CV",
+    "buttonMore": "Más sobre mí"
 }
