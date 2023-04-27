@@ -1,13 +1,16 @@
-
-import arrowIcon from '@/assets/about/arrow.svg';
 import { PublicRoutes } from '@/models';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 interface Props {
     title: string;
     line?: boolean;
     button?: boolean;
 }
+
 export const Divider = ({ title, line = false, button = false }: Props) => {
+    const [t] = useTranslation('global')
+
     const withLine = 'after:md:w-full after:md:border-b after:md:border-primary after:md:border-1 after:md:mx-6 xl:after:md:mx-10'
     return (
         <div className="container px-6 py-10 mx-auto">
@@ -21,7 +24,7 @@ export const Divider = ({ title, line = false, button = false }: Props) => {
                     button &&
                     <NavLink to={PublicRoutes.PROJECTS} className="text-white text-sm">
                         <span className="inline-flex items-center whitespace-nowrap transition-colors duration-200 ease-in-out hover:text-primary">
-                            <p className='mr-1 '>View all</p>
+                            <p className='mr-1 '>{t("divider.button")}</p>
                             <svg
                                 className="h-3 sm:h-4 w-auto fill-current"
                                 viewBox="0 0 24 24"

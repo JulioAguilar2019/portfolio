@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 
 interface FormData {
     name: string;
@@ -10,6 +12,7 @@ interface FormData {
 };
 
 export const ContactForm = () => {
+    const [t] = useTranslation('global')
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
     const [toastMessage, setToastMessage] = useState<String>('');
@@ -47,21 +50,23 @@ export const ContactForm = () => {
                     import.meta.env.VITE_PUBLIC_KEY
                 )
                 .then(
-                    function (response) {
-                        showToast("Correo enviado correctamente.", "success");
+                    function () {
+                        showToast(t("contact.message"), "success");
                         reset();
                     },
                     function (error) {
-                        showToast("Error al enviar el correo", "error");
+                        showToast(t("contact.error"), "error");
                     }
                 );
         },
         () => {
             if (errors.name || errors.email || errors.message) {
-                showToast("Por favor, completa todos los campos.", "error");
+                showToast(t("contact.empty"), "error");
             }
         }
     );
+
+
 
     return (
         <>
@@ -69,7 +74,7 @@ export const ContactForm = () => {
                 <div className="lg:flex lg:items-center lg:-mx-6">
                     <div className="lg:w-1/2 lg:mx-6">
                         <h1 className="text-2xl font-semibold text-primary capitalize">
-                            Contact me
+                            {t("contact.title")}
                         </h1>
 
                         <div className="mt-6 space-y-8 md:mt-8">
@@ -104,7 +109,7 @@ export const ContactForm = () => {
                         </div>
 
                         <div className="mt-6 w-80 md:mt-8">
-                            <h3 className="text-primary">All media</h3>
+                            <h3 className="text-primary">{t("contact.media")}</h3>
 
                             <div className="flex mt-4 -mx-1.5 ">
                                 <a className="mx-1.5 text-secondary transition-colors duration-300 transform hover:text-primary" href="https://github.com/JulioAguilar2019" target='_blank'>
@@ -160,37 +165,37 @@ export const ContactForm = () => {
                             )}
                         </AnimatePresence>
                         <div
-                            className="w-full px-8 py-10 mx-auto overflow-hidden bg-transparent border-secondary border-solid  lg:max-w-xl  ">
-                            <h1 className="text-lg font-medium text-white">Send me a message</h1>
+                            className="w-full py-10 mx-auto overflow-hidden bg-transparent border-secondary border-solid  lg:max-w-xl  ">
+                            <h1 className="text-lg font-medium text-white">{t("contact.subtitle")}</h1>
 
                             <form onSubmit={onSubmit} className="mt-6">
                                 <div className="flex-1">
-                                    <label className="block mb-2 text-sm text-white" htmlFor='name'>Full Name</label>
+                                    <label className="block mb-2 text-sm text-white" htmlFor='name'>{t("contact.labelName")}</label>
                                     <input
                                         {...register("name", { required: "Name is required" })}
-                                        type="text" name='name' placeholder="Owen Johnson"
+                                        type="text" name='name' placeholder={t("contact.placeholderName")}
                                         className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md" />
                                 </div>
 
                                 <div className="flex-1 mt-6">
-                                    <label className="block mb-2 text-sm text-white" htmlFor='email'>Email address</label>
+                                    <label className="block mb-2 text-sm text-white" htmlFor='email'>{t("contact.labelEmail")}</label>
                                     <input
                                         {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })}
-                                        type="email" name='email' placeholder="owenjohnson@example.com"
+                                        type="email" name='email' placeholder={t("contact.placeholderEmail")}
                                         className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md " />
                                 </div>
 
                                 <div className="w-full mt-6">
-                                    <label className="block mb-2 text-sm text-white dark:text-gray-200">Message</label>
+                                    <label className="block mb-2 text-sm text-white dark:text-gray-200">{t("contact.labelMessage")}</label>
                                     <textarea
                                         {...register("message", { required: "Message is required" })}
                                         className="block w-full h-32 px-5 py-3 mt-2 text-white placeholder-gray-400 bg-transparent border border-secondary rounded-md md:h-48 "
-                                        placeholder="Message"
+                                        placeholder={t("contact.placeholderMessage")}
                                     />
                                 </div>
 
                                 <button type='submit' className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-primary100 hover:text-darkText">
-                                    Send Message
+                                    {t("contact.button")}
                                 </button>
                             </form>
                         </div>

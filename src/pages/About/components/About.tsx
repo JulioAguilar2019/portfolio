@@ -26,17 +26,17 @@ export const About = ({ homePage = true }: Props) => {
                     <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-white md:text-3xl lg:text-4xl">{t("about.title")}</h1>
 
                     <p className="mb-3 font-light text-justify leading-8 text-secondary">
-                        Soy un desarrollador web frontend en mi último año de ingeniería en desarrollo de software. Utilizo tecnologías como <span className="text-primary">TypeScript, React JS, Redux, Tailwind y NodeJS</span> para crear aplicaciones web intuitivas y atractivas. También tengo un <span className="text-primary">nivel B2 en inglés</span>, lo que me permite comunicarme eficazmente con colegas y clientes en un ambiente internacional.
+                        {t("about.about-me")}<span className="text-primary">{t("about.techs")}</span>{t("about.paragraph1")}<span className="text-primary">{t("about.english")}</span>{t("about.paragraph2")}
                     </p>
                     <p className="mb-3 font-light text-justify leading-8 text-secondary">
-                        Además de mi experiencia técnica, también tengo habilidades en <span className="text-primary">resolución de problemas y pensamiento lógico</span> que me permiten encontrar soluciones eficaces a los desafíos que se presentan en el desarrollo de software. Me gusta trabajar en equipo y colaborar con otros desarrolladores para lograr resultados impresionantes. Estoy constantemente buscando aprender nuevas habilidades y tecnologías para mejorar mis habilidades y ofrecer un mejor servicio a mis clientes. Estoy ansioso de poner mis habilidades a prueba en un entorno de trabajo desafiante y enriquecedor.
+                        {t("about.experience")}<span className="text-primary"> {t("about.abilities")}</span>{t("about.paragraph3")}
                     </p>
                     {
                         homePage
                             ?
-                            <NavLink to={PublicRoutes.ABOUT} type='button' className={buttonClass}>Read more</NavLink>
+                            <NavLink to={PublicRoutes.ABOUT} type='button' className={buttonClass}>{t("about.buttonMore")}</NavLink>
                             :
-                            <a href={resume} type='button' download='resume.pdf' className={buttonClass}>Download resume</a>
+                            <a href={resume} type='button' download='resume.pdf' className={buttonClass}>{t("about.buttonCV")}</a>
                     }
                 </div>
                 <img className="object-scale-down lg:w-1/2 lg:mx-6 w-full h-96 rounded-lg lg:h-[45rem]" src={image} alt="julio-aguilar" />
