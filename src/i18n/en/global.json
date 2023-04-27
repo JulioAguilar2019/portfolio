@@ -13,6 +13,12 @@
         "button": "Download resume",
         "quote": "I’m not a great programmer; I’m just a good programmer with great habits."
     },
+    "projects": {
+        "title": "List of my projects" ,
+        "front": "frontend-projects",   
+        "back": "backend-projects",
+        "mobile": "mobile-projects"
+    },
     "about": {
         "title": "Who am I?",
         "about-me": "I am a frontend web developer in my final year of software development engineering. I use technologies such as ",

@@ -32,6 +32,7 @@ export const TechStack = () => {
                 <ImageWithHover alt='nodejs icon' title='NodeJS' src={nodeIcon} hoverSrc={nodeIconColor} />
                 <ImageWithHover alt='react icon' title='React' src={reactIcon} hoverSrc={reactIconColor} />
                 <ImageWithHover alt='nextjs icon' title='NextJS' src={nextIcon} hoverSrc={nextIconColor} />
+                <ImageWithHover alt='react icon' title='React native' src={reactIcon} hoverSrc={reactIconColor} />
                 <ImageWithHover alt='postgresql icon' title='PostgreSQL' src={postgresqlIcon} hoverSrc={postgresqlIconColor} />
                 <ImageWithHover alt='mysql icon' title='MySQL' src={mysqlIcon} hoverSrc={mysqlIconColor} />
                 <ImageWithHover alt='github icon' title='Github' src={githubIcon} hoverSrc={githubIconColor} />

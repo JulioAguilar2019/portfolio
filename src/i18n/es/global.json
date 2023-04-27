@@ -13,6 +13,12 @@
         "button": "Descargar CV",
         "quote": "No soy un gran programador; Solo soy un buen programador con buenos hábitos."
     },
+    "projects": {
+        "title": "Lista de mi proyectos" ,
+        "front": "proyectos-frontend",   
+        "back": "proyectos-backend",
+        "mobile": "proyectos-mobile"
+    },
     "about": {
     "title": "¿Quién soy?",
     "about-me": "Soy un desarrollador web frontend en mi último año de ingeniería en desarrollo de software. Utilizo tecnologías como ",
