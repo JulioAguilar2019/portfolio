@@ -1,5 +1,4 @@
 import { LayoutComponent } from "./components"
-import { HomePage } from "./pages"
 import { AppRouter } from "./routes"
 
 
